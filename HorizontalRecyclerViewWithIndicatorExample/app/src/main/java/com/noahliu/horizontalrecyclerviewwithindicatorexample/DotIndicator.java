@@ -16,7 +16,6 @@ public class DotIndicator extends View {
 
     private Paint paint;
     private int pageNum;
-    private float scrollPercent = 0f;
     private int currentPosition;
     private int gapSize;
     private float radius;
@@ -39,6 +38,13 @@ public class DotIndicator extends View {
         init();
     }
 
+    public void setThumbColor(int thumbColor) {
+        this.thumbColor = thumbColor;
+    }
+
+    public void setTrackColor(int trackColor) {
+        this.trackColor = trackColor;
+    }
 
     private void init() {
         radius = dp2px(10f);
@@ -71,8 +77,8 @@ public class DotIndicator extends View {
         //設置被選中的點點將之設為深色
         canvas.drawCircle(left + currentPosition * gapSize,
                 height, radius, paint);
-
     }
+
     //取得item的數量
     public void setPageNum(int num) {
         pageNum = num;

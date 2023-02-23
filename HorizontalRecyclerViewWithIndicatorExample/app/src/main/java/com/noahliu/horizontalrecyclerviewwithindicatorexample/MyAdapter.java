@@ -5,15 +5,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public ArrayList<TanksData> data;
-    private RecyclerViewIndicator indicator;
+
+    public MyAdapter(ArrayList<TanksData> data) {
+        this.data = data;
+    }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvTitle,tvDepiction;
@@ -27,8 +28,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         }
     }
 
-    public MyAdapter(ArrayList<TanksData> data) {
-        this.data = data;
+    //綁定標籤點點列
+    public void setIndicator(RecyclerViewIndicator indicator,RecyclerView recyclerView){
+        indicator.setWithRecyclerView(recyclerView);
     }
 
     @NonNull
@@ -44,11 +46,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.tvTitle.setText(tanksData.getTitle());
         holder.tvDepiction.setText(tanksData.getDepiction());
         holder.igTank.setImageResource(tanksData.getImage());
-    }
-    //綁定標籤點點列
-    public void setIndicator(RecyclerViewIndicator indicator,RecyclerView recyclerView){
-        this.indicator = indicator;
-        this.indicator.setWithRecyclerView(recyclerView);
     }
 
     @Override
