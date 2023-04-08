@@ -1,4 +1,5 @@
 # install: pip install cosmospy
+import binascii
 
 from cosmospy import BIP32DerivationError, seed_to_privkey, privkey_to_pubkey, pubkey_to_address, privkey_to_address
 from cosmospy.typing import Wallet
@@ -29,7 +30,9 @@ if __name__ == '__main__':
     wallet = m_generate_wallet()
     print("Mnemonic: ", wallet["seed"])
     print("Public Key: ", wallet["public_key"])
+    print("Public Key（hex）: ", binascii.hexlify(wallet["public_key"]))
     print("Private Key: ", wallet["private_key"])
+    print("Private Key（hex）: ", binascii.hexlify(wallet["private_key"]))
     print("Derivation_path: ", wallet["derivation_path"])
     try:
         privkey = seed_to_privkey(wallet["seed"], path="m/44'/118'/0'/0/0")
