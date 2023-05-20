@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AutofillExample</string>
+    <plurals name="welcome_page_countdown">
+        <item quantity="one">Automatically return to main page in %d second.</item>
+        <item quantity="other">Automatically return to main page in %d seconds.</item>
+    </plurals>
+</resources>
