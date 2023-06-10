@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="myText"
+            type="String" />
+
+        <variable
+            name="myViewModel"
+            type="com.noahliu.databinding.MyViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <EditText
+            android:id="@+id/edBindExample"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:hint="input"
+            android:inputType="number"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text='@{myText,default="綁定變數測試"}'
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edBindExample" />
+
+        <TextView
+            android:id="@+id/tvMultipliedBy11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text='@{myViewModel.multipliedBy11 == null?"0*11=0":myViewModel.multipliedBy11,default="0*11=0"}'
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintBottom_toTopOf="@+id/tvMultipliedBy21"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvMultipliedBy21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text='@{myViewModel.multipliedBy21 == null?"0*21=0":myViewModel.multipliedBy21,default="0*21=0"}'
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintBottom_toTopOf="@+id/tvMultipliedBy31"
+            app:layout_constraintEnd_toEndOf="@+id/tvMultipliedBy11"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/tvMultipliedBy11" />
+
+        <TextView
+            android:id="@+id/tvMultipliedBy31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text='@{myViewModel.multipliedBy31 == null?"0*31=0":myViewModel.multipliedBy31,default="0*31=0"}'
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintBottom_toTopOf="@+id/tvMultipliedBy41"
+            app:layout_constraintEnd_toEndOf="@+id/tvMultipliedBy11"
+            app:layout_constraintStart_toStartOf="@+id/tvMultipliedBy11" />
+
+        <TextView
+            android:id="@+id/tvMultipliedBy41"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text='@{myViewModel.multipliedBy41 == null?"0*41=0":myViewModel.multipliedBy41,default="0*41=0"}'
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintBottom_toTopOf="@+id/tvMultipliedBy51"
+            app:layout_constraintEnd_toEndOf="@+id/tvMultipliedBy11"
+            app:layout_constraintStart_toStartOf="@+id/tvMultipliedBy11" />
+
+        <TextView
+            android:id="@+id/tvMultipliedBy51"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text='@{myViewModel.multipliedBy51 == null?"0*51=0":myViewModel.multipliedBy51,default="0*51=0"}'
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintBottom_toTopOf="@+id/edBindExample"
+            app:layout_constraintEnd_toEndOf="@+id/tvMultipliedBy11"
+            app:layout_constraintStart_toStartOf="@+id/tvMultipliedBy11" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
