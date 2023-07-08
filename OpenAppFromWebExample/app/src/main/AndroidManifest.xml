@@ -26,11 +26,12 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <!--格式：   -->
+                <!--格式： myapp://noah.liu/example?info=來自火星的Hello  -->
                 <data
+                    android:scheme="myapp"
                     android:host="noah.liu"
                     android:pathPrefix="/example"
-                    android:scheme="myapp" />
+                     />
             </intent-filter>
 
             <meta-data
