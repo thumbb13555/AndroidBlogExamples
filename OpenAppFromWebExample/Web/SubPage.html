@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>None</title>
+  </head>
+  <body onload="open()">
+    <h1>請稍候...</h1>
+  </body>
+</html>
+<script language="javascript">
+  let app = 'myapp://noah.liu/example?info=來自火星的Hello';
+  let appstore =
+    'https://play.google.com/store/apps/details?id=com.noahliu.noisemeter';
+
+  function open() {
+    
+    setTimeout(function () {
+        window.location.href = app;
+        setTimeout(function(){
+            window.location.href = appstore;
+            setTimeout(function(){
+                window.close();
+            },1000);
+        },2000);
+    }, 500);
+  }
+</script>

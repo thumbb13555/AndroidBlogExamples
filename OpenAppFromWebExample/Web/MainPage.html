@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MainPage</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="center">
+        <a onclick="javascript:open_app();" class="styled">開啟APP</a>
+      </div>
+    </div>
+  </body>
+  <script language="javascript">    
+
+    function open_app(){
+        window.open("SubPage.html");
+    }
+</script>
+</html>
+
+<style>
+  .styled {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background: #9b4d;
+    color: #fff;
+    font-size: 120px;
+    border-radius: 30px;
+    border: none;
+    text-decoration: none;
+  }
+
+  .container {
+    height: 900px;
+    position: relative;
+  }
+
+  .center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+</style>
+
